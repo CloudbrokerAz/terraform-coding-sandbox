@@ -1,0 +1,70 @@
+namespaces:
+  project-bob:
+    name: "project-bob"
+    owner: "bob"
+    ad-group: "AD-Group-1"
+    role: "A"
+    horses:
+      - "mustang"
+    dogs:
+      - "bulldog"
+      - "labrador"
+    cats:
+      - "persian"
+      - "siamese"
+      - "maine coon"
+    employee: "John Doe"
+    supporthrs: "247hrs"
+    edit: true
+
+  project-alice:
+    name: "project-alice"
+    owner: "alice"
+    ad-group: "AD-Group-2"
+    role: "B"
+    horses:
+      - "arabian"
+    dogs:
+      - "beagle"
+      - "poodle"
+    cats:
+      - "bengal"
+      - "ragdoll"
+    employee: "Jane Doe"
+    supporthrs: "247hrs"
+    edit: false
+
+  project-charlie:
+    name: "project-charlie"
+    owner: "charlie"
+    ad-group: "AD-Group-3"
+    role: "C"
+    horses: []
+    dogs: null   # No dogs listed, null value
+    cats:
+      - "tabby"
+    employee: "Charlie Doe"
+    supporthrs: "100hrs"
+    edit: true
+
+  project-dana:
+    name: "project-dana"
+    owner: "dana"
+    ad-group: "AD-Group-4"
+    role: "D"
+    horses: null   # No horses listed, null value
+    dogs: []
+    cats: []
+    employee: "Dana Doe"
+    supporthrs: "50hrs"
+    edit: false
+
+  project-ellen:
+    name: "project-ellen"
+    owner: "ellen"
+    ad-group: "AD-Group-5"
+    role: "E"
+    # Missing values for horses, dogs, and cats (null by default)
+    employee: "Ellen Doe"
+    supporthrs: "200hrs"
+    edit: true

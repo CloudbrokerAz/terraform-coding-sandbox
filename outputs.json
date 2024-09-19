@@ -1,0 +1,54 @@
+{
+    "namespace_cats": {
+        "project-alice": [
+            "bengal",
+            "ragdoll"
+        ],
+        "project-bob": [
+            "persian",
+            "siamese",
+            "maine coon"
+        ],
+        "project-charlie": [
+            "tabby"
+        ],
+        "project-dana": [],
+        "project-ellen": []
+    },
+    "namespace_combined_horses_dogs": {
+        "project-alice": {
+            "dogs": "beagle && poodle",
+            "horses": "arabian"
+        },
+        "project-bob": {
+            "dogs": "bulldog && labrador",
+            "horses": "mustang"
+        },
+        "project-charlie": {
+            "dogs": "no dogs",
+            "horses": "no horses"
+        },
+        "project-dana": {
+            "dogs": "no dogs",
+            "horses": "no horses"
+        },
+        "project-ellen": {
+            "dogs": "no dogs",
+            "horses": "no horses"
+        }
+    },
+    "namespace_dogs_and_logic": {
+        "project-alice": "beagle && poodle",
+        "project-bob": "bulldog && labrador",
+        "project-charlie": "no dogs",
+        "project-dana": "no dogs",
+        "project-ellen": "no dogs"
+    },
+    "namespace_horses_and_logic": {
+        "project-alice": "arabian",
+        "project-bob": "mustang",
+        "project-charlie": "no horses",
+        "project-dana": "no horses",
+        "project-ellen": "no horses"
+    }
+}
