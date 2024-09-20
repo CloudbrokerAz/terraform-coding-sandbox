@@ -13,15 +13,15 @@ output "namespace_cats" {
 
 # AND logic: Concatenate horses and dogs with "&&" or handle empty/null
 output "namespace_horses_and_logic" {
-  value = { 
-    for k, v in local.namespaces : 
+  value = {
+    for k, v in local.namespaces :
     k => length(coalesce(lookup(v, "horses", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "horses", []), [])) : "no horses"
   }
 }
 
 output "namespace_dogs_and_logic" {
-  value = { 
-    for k, v in local.namespaces : 
+  value = {
+    for k, v in local.namespaces :
     k => length(coalesce(lookup(v, "dogs", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "dogs", []), [])) : "no dogs"
   }
 }
@@ -38,10 +38,10 @@ output "namespace_combined_horses_and_dogs" {
 
 resource "local_file" "output_json" {
   filename = "${path.module}/outputs.json"
-  content  = replace(jsonencode({
-    namespace_cats                = { for k, v in local.namespaces : k => coalesce(lookup(v, "cats", []), []) }
-    namespace_horses_and_logic     = { for k, v in local.namespaces : k => length(coalesce(lookup(v, "horses", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "horses", []), [])) : "no horses" }
-    namespace_dogs_and_logic       = { for k, v in local.namespaces : k => length(coalesce(lookup(v, "dogs", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "dogs", []), [])) : "no dogs" }
+  content = replace(jsonencode({
+    namespace_cats             = { for k, v in local.namespaces : k => coalesce(lookup(v, "cats", []), []) }
+    namespace_horses_and_logic = { for k, v in local.namespaces : k => length(coalesce(lookup(v, "horses", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "horses", []), [])) : "no horses" }
+    namespace_dogs_and_logic   = { for k, v in local.namespaces : k => length(coalesce(lookup(v, "dogs", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "dogs", []), [])) : "no dogs" }
     namespace_combined_horses_dogs = {
       for k, v in local.namespaces : k => {
         horses = length(coalesce(lookup(v, "horses", []), [])) > 0 ? join(" && ", coalesce(lookup(v, "horses", []), [])) : "no horses"
